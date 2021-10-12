@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Joe's Hotdogs</title>
+		<style type="text/css">
+			body, h2 {
+				background-color: #BD4866;
+			}
+			h1 {
+				font-size: 40px;
+				color: #ffffff;
+			}
+		</style>
+	</head>
+	<body>
+		<h1> Hello! Welcome to Joe's Hotdog Stand! </h1>
+		<script language="javascript">
+			var hotdogs = prompt("How many hotdogs do you want? ($3.75 each)");
+			var fries = prompt("How many fries do you want? ($2 each)");
+			var sodas = prompt("How many sodas do you want? ($1.5 each)");
+
+			var subtotal = (hotdogs * 3.75) + (fries * 2) + (sodas * 1.5);
+			document.write("Hotdogs: "+ hotdogs);
+			document.write("<br>");
+			document.write("Fries: " + fries);
+			document.write("<br>");
+			document.write("Sodas: " + sodas);
+			document.write("<br>");
+
+			if (subtotal >= 20) { //discount if applicable
+				var discount = 0.1 * subtotal;
+				subtotal = subtotal - discount;
+				document.write("Congrats! You qualify for our discount. Your subtotal is: $" + subtotal.toFixed(2));
+			}
+			else {
+				document.write("You do not qualify for our discount. Your subtotal is: $" + subtotal.toFixed(2));
+			}
+
+			document.write("<br>");
+			var tax = 0.0625 * subtotal;
+			document.write("Tax: $" + tax.toFixed(2));
+			var total = subtotal + tax; //add tax
+			document.write("<br>");
+			document.write("Total: $" + total.toFixed(2));
+		</script>
+
+		<h2> Thank you for visiting! Please come again soon!</h2>
+	</body>
+</html>
